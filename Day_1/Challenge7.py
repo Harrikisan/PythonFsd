@@ -1,0 +1,14 @@
+#Perfect square
+
+import math
+
+n = int(input("Enter first number: "))
+m = int(input("Enter second number: "))
+
+product = n * m
+root = math.isqrt(product)
+
+if root * root == product:
+    print("yes")
+else:
+    print("no")

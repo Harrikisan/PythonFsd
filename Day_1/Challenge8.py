@@ -1,0 +1,11 @@
+#Sum is odd or even
+
+n = int(input("Enter first number: "))
+m = int(input("Enter second number: "))
+
+sum = n + m
+
+if sum % 2 == 0:
+    print("even")
+else:
+    print("odd")

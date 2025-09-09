@@ -1,0 +1,17 @@
+#Calculater
+def add(a, b):
+    print("Add:", a + b)
+
+def sub(a, b):
+    print("Subtract:", a - b)
+
+def mul(a, b):
+    print("Multiply:", a * b)
+
+def div(a, b):
+    print("Divide:", a / b)
+
+add(10, 5)
+sub(10, 5)
+mul(10, 5)
+div(10, 5)
