@@ -1,10 +1,10 @@
 import accounts 
 import transactions
 
-accounts.createAccount(101,"amal",1000)
+accounts.createAccount(1001,"John",1500)
 
-transactions.deposit(101,500)
+transactions.deposit(1001,800)
 
-transactions.withdraw(101,200)
+transactions.withdraw(1001,100)
 
-print("balance:",accounts.getBalance(101))
+print("balance:",accounts.getBalance(201))
