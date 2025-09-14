@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "509f9fac-906a-4c86-9dac-7c1577b224bc",
+		"name": "Patient_management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33630056"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Department",
+					"item": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Harri\",\r\n    \"password\":\"harri@123\",\r\n    \"role\":\"doctor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1Nzc3Njc5NiwianRpIjoiYzU4ZTI0ZGEtNGEzNi00NDljLThlYjMtYjljMTI3ZGQ5OWY1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImFkbWluIiwibmJmIjoxNzU3Nzc2Nzk2LCJjc3JmIjoiOGFlZjY3OWMtYjM4NC00M2U2LThiNTgtYzg1YzE3MzgxZDYxIiwiZXhwIjoxNzU3Nzc3Njk2fQ.vatUsv_ukzZFVgtBifM4pzqxTWRhqmHnJlwXZArJtI4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Cardialogy\",\r\n    \"head_doctor\":\"Karthik\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "http://127.0.0.1:5000/all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzgyNzAwNywianRpIjoiYjhmNWUwODQtYjVkOC00YzUyLWJjMjItNzVmZDdkM2U4OGZmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InsndXNlcm5hbWUnOiAnYWRtaW4nLCAncm9sZSc6ICdhZG1pbid9IiwibmJmIjoxNzU3ODI3MDA3LCJjc3JmIjoiM2RhZGM4MjAtODRiMy00OTAzLThhYmQtMTY5ZDlmMzVjMzQzIiwiZXhwIjoxNzU3ODI3OTA3fQ.yZ5Wktjy8LnnNZCHd5QUe5XisRUtQwLJuKdMIiBprBY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzgyNzAwNywianRpIjoiYjhmNWUwODQtYjVkOC00YzUyLWJjMjItNzVmZDdkM2U4OGZmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InsndXNlcm5hbWUnOiAnYWRtaW4nLCAncm9sZSc6ICdhZG1pbid9IiwibmJmIjoxNzU3ODI3MDA3LCJjc3JmIjoiM2RhZGM4MjAtODRiMy00OTAzLThhYmQtMTY5ZDlmMzVjMzQzIiwiZXhwIjoxNzU3ODI3OTA3fQ.yZ5Wktjy8LnnNZCHd5QUe5XisRUtQwLJuKdMIiBprBY",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/patients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzgyODg1NywianRpIjoiYjIwM2FiNGQtYTU0OS00YWI3LThmNjAtZjk1NjEyNjcxMGU2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InsndXNlcm5hbWUnOiAnYWRtaW4nLCAncm9sZSc6ICdhZG1pbid9IiwibmJmIjoxNzU3ODI4ODU3LCJjc3JmIjoiMjZjYjE3NTQtZWQxYy00MzIyLWI1MmItYzJjNDA4Y2Y2ZmQ5IiwiZXhwIjoxNzU3ODI5NzU3fQ.0qSB7nkwwTLGbzatwr4_P_llJtcVr9qASSNbV10KEy4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Emily\",\r\n  \"age\": 30,\r\n  \"gender\": \"Female\",\r\n  \"disease\": \"Flu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/patients",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/patients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzgyODg1NywianRpIjoiYjIwM2FiNGQtYTU0OS00YWI3LThmNjAtZjk1NjEyNjcxMGU2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InsndXNlcm5hbWUnOiAnYWRtaW4nLCAncm9sZSc6ICdhZG1pbid9IiwibmJmIjoxNzU3ODI4ODU3LCJjc3JmIjoiMjZjYjE3NTQtZWQxYy00MzIyLWI1MmItYzJjNDA4Y2Y2ZmQ5IiwiZXhwIjoxNzU3ODI5NzU3fQ.0qSB7nkwwTLGbzatwr4_P_llJtcVr9qASSNbV10KEy4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/patients",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/patients/disease/Flu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzgyODg1NywianRpIjoiYjIwM2FiNGQtYTU0OS00YWI3LThmNjAtZjk1NjEyNjcxMGU2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InsndXNlcm5hbWUnOiAnYWRtaW4nLCAncm9sZSc6ICdhZG1pbid9IiwibmJmIjoxNzU3ODI4ODU3LCJjc3JmIjoiMjZjYjE3NTQtZWQxYy00MzIyLWI1MmItYzJjNDA4Y2Y2ZmQ5IiwiZXhwIjoxNzU3ODI5NzU3fQ.0qSB7nkwwTLGbzatwr4_P_llJtcVr9qASSNbV10KEy4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/patients/disease/Flu",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"patients",
+								"disease",
+								"Flu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/patients/search?name=Emily",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzgyODg1NywianRpIjoiYjIwM2FiNGQtYTU0OS00YWI3LThmNjAtZjk1NjEyNjcxMGU2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InsndXNlcm5hbWUnOiAnYWRtaW4nLCAncm9sZSc6ICdhZG1pbid9IiwibmJmIjoxNzU3ODI4ODU3LCJjc3JmIjoiMjZjYjE3NTQtZWQxYy00MzIyLWI1MmItYzJjNDA4Y2Y2ZmQ5IiwiZXhwIjoxNzU3ODI5NzU3fQ.0qSB7nkwwTLGbzatwr4_P_llJtcVr9qASSNbV10KEy4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Emily\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/patients/search?name=Emily",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"patients",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Emily"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/patients/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzgyODg1NywianRpIjoiYjIwM2FiNGQtYTU0OS00YWI3LThmNjAtZjk1NjEyNjcxMGU2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InsndXNlcm5hbWUnOiAnYWRtaW4nLCAncm9sZSc6ICdhZG1pbid9IiwibmJmIjoxNzU3ODI4ODU3LCJjc3JmIjoiMjZjYjE3NTQtZWQxYy00MzIyLWI1MmItYzJjNDA4Y2Y2ZmQ5IiwiZXhwIjoxNzU3ODI5NzU3fQ.0qSB7nkwwTLGbzatwr4_P_llJtcVr9qASSNbV10KEy4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"admitted_on\": \"2025-09-14\",\r\n        \"age\": 30,\r\n        \"disease\": \"Flu\",\r\n        \"name\": \"Emily\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/patients/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"patients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:5000/patients/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzgyOTI2OCwianRpIjoiN2E0NWI1OTQtY2FkOC00MGNjLWI1Y2YtMGRlMDk5ZDA0YjBlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InsndXNlcm5hbWUnOiAnYWRtaW4nLCAncm9sZSc6ICdhZG1pbid9IiwibmJmIjoxNzU3ODI5MjY4LCJjc3JmIjoiN2ZiZWE1YWUtY2NjOS00ZWI2LTgyMzItZWU0ZDgzZjg0ZWE4IiwiZXhwIjoxNzU3ODMwMTY4fQ.IEk_Fgd_5JvXJx8xvz_CJiLp3LywnjOnrEFgj9yJecY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/patients/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"patients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
